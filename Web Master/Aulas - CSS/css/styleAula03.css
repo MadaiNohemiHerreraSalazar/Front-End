@@ -1,0 +1,7 @@
+/* (*) = todos los elementos de la página*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

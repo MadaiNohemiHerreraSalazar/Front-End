@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+//colspan = Colunas
+//rowspan = filas
+
+<head>
+    <title>Tabela</title>
+    <meta charset="utf-8" />
+
+    <style>
+        thead {
+            background-color: rgb(231, 85, 170);
+        }
+
+        thead.morning {
+            background-color: rgb(253, 207, 120);
+        }
+
+        thead.evening {
+            background-color: rgb(250, 139, 139);
+        }
+
+        thead.night {
+            background-color: rgb(141, 209, 231);
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <h1 style="color: rgb(231, 85, 170);">My Itinerary!</h1>
+
+    <table width="900" aling="center" border="1">
+
+        <thead>
+            <tr>
+                <th colspan="2">Monday - Wednesday - Friday</th>
+            </tr>
+        </thead>
+
+        <thead class="morning">
+            <tr>
+                <th colspan="2">Morning</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">8-9am</td>
+            <td>My time with God</td>
+        </tr>
+        <tr>
+            <td rowspan="1">9-10am</td>
+            <td>Helping in my house</td>
+        </tr>
+        <tr>
+            <td rowspan="1">10-11am</td>
+            <td>Workout</td>
+        </tr>
+
+        <thead class="evening">
+            <tr>
+                <th colspan="2">Evening</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">11am - 6pm</td>
+            <td>Free Time!!</td>
+        </tr>
+
+        <thead class="night">
+            <tr>
+                <th colspan="2">Night</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">6-7pm</td>
+            <td>My time with God</td>
+        </tr>
+
+    </table>
+
+    <br />
+    <br />
+
+
+    <table width="900" aling="center" border="1">
+
+        <thead>
+            <tr>
+                <th colspan="2">Tuesday - Thursday</th>
+            </tr>
+        </thead>
+
+        <thead class="morning">
+            <tr>
+                <th colspan="2">Morning</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">8-9am</td>
+            <td>My time with God</td>
+        </tr>
+        <tr>
+            <td rowspan="1">9-10am</td>
+            <td>Helping in my house</td>
+        </tr>
+        <tr>
+            <td rowspan="1">10-11am</td>
+            <td>Workout</td>
+        </tr>
+
+        <thead class="evening">
+            <tr>
+                <th colspan="2">Evening</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">2pm - 5pm</td>
+            <td>Learn Front-End!!</td>
+        </tr>
+
+        <thead class="night">
+            <tr>
+                <th colspan="2">Night</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td rowspan="1">6-7pm</td>
+            <td>My time with God</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

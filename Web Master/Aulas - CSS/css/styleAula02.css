@@ -1,0 +1,30 @@
+ body{
+    /*Test for  Aula02*/
+
+    background-color: black;
+
+    /*
+    div1 > h1 = diretamente dentro do id
+    div h1 = todos os h1 dentro dele
+    */
+
+    /*IDs*/
+
+    #div1 > h1{
+        color: bisque;
+    }
+
+    #div2 > h1{
+        color: red;
+    }
+
+    /*Class*/
+
+    .div1 > h1{
+        color: bisque;
+    }
+
+    .div2 > h1{
+        color: red;
+    }
+ }

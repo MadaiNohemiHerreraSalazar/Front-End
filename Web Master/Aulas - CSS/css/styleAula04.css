@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.menu{
+    width: 900px;
+    background-color: rebeccapurple;
+    margin: 20px auto;
+    text-align: center;
+
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 20px;
+    color: antiquewhite;
+    border-right: 8px;
+    margin: 0 20px;
+
+}
+
+/*
+
+Mais especificado:
+
+div.menu{
+xxxxxxxxxxxx
+}
+
+O mais detalhado e para abaixo está acima na hierarquia
+
+*/
+
