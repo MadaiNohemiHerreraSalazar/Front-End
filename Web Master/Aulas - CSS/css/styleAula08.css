@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html, body{
+    height: 100%;
+}
+
+.lista, .lista2{
+    list-style-position: inside; /*Vem com bolinha de default*/
+    list-style-type: disc;
+}
+
+.lista li, .lista2 li{
+    color: blueviolet;
+    font-size: 20px;
+    margin-top:  10px;
+}
+
+.lista .item3, .lista2 .item3{
+    font-weight: bold;
+}
+
+/*
+.lista li.item3{
+    color: palevioletred;
+}
+    
+Mientras más especifico, más importancia*/
+
+/* _____________________ LISTA 3 _____________________________*/
+
+ol{
+    list-style-position: inside; /*Vem com numeral de default*/
+}
+
+ol > li{
+    color: blue;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+ol ol li{
+    font-weight: bold;
+}
+
+/* _________________ EJEMPLO 4 _________________________________*/
+
+.uno{
+    width: 500px;
+    height: 500px;
+    background-color: brown;
+}
+
+/* ( > ) tiene que estar directamente dentro de!!*/
+
+.uno > .dos{
+    width: 300px;
+    height: 300px;
+    background-color:aqua;
+}
+
+.uno > .tres{
+    width: 100px;
+    height: 100px;
+    background-color:palevioletred;
+}
+
+.uno > .tres > .cuatro{
+    width: 100px;
+    height: 100px;
+    background-color:antiquewhite;
+}
+

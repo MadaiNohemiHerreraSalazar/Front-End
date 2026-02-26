@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html, body{
+    height: 100%;
+}
+
+.tipo1{
+    color: blueviolet;
+}
+
+.link_ {
+    font-size: 30px;
+}
+
+.tipo2{
+    font-size: 40px;
+}
+
+/*Va a dominar la ultima!!
+La ordem no va a importar si hay más especificación*/
+

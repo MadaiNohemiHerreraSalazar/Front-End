@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: rgb(51, 14, 92);
+    margin: 0;
+}
+
+#Top a {
+    display: block;
+    width: 100%;
+    color: rgb(255, 247, 237);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 40px;
+    text-align: center;
+    font-size: 30px;
+}
+
+html, body{
+    height: 100%;
+}
+
+
+.artigo {
+    width: 100%; /*Anchura (PX o %) (% = Espacio de la Tela*/
+    /*max-width: 300px; Anchura Maxima!*/
+    height: auto; /*Altura ("Auto" = Espacio de la Tela)*/ 
+    text-align: center;
+    background-color: rgb(255, 247, 237);
+}
+
+.artigo h1 {
+    color: rgb(51, 14, 92);
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: small-caps;
+}
+
+.artigo h2 {
+    color: rgb(51, 14, 92);
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: small-caps;
+}
+
+.artigo h3 {
+    color: rgb(51, 14, 92);
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: small-caps;
+}
+
+.artigo p {
+    color: rgb(119, 58, 119);
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 15px;
+    margin: 50px;
+}

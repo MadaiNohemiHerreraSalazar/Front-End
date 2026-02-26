@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html, body{
+    height: 100%;
+}
+
+body{
+    background-color:bisque;
+}
+
+.center{
+
+    width: 1280px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color:rgb(29, 12, 1);
+}
+
+.artigo{
+    width: 1280px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: bisque;
+
+}
+
+.center h1{
+
+    color: bisque;
+    font-size: 50px;
+}
+
+.artigo h2{
+
+    color:rgb(29, 12, 1);
+    font-size: 40px;
+    margin: 10px;
+}
+
+.artigo h3{
+
+    color:rgb(29, 12, 1);
+    font-size: 30px;
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.artigo p{
+
+    color:rgb(29, 12, 1);
+    font-size: 20px;
+    margin: 10px ;
+    padding: 15px;
+}

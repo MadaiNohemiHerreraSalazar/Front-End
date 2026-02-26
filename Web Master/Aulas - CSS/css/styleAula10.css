@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+html, body{
+    height: 100%;
+}
+
+/*.header{
+    width: 100%;
+    min-width: 1280px;
+    height: 200px;
+    background: red;
+} */
+
+.article{
+    margin: 0 auto;
+    width: 1280px;
+    height: 10px;
+    background: yellowgreen;
+}
+
+/*min/max - X vai sobre escrever a X*/
