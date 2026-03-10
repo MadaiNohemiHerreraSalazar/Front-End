@@ -34,24 +34,46 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+.header {
+    max-width: 100%;
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(199, 92, 255);
+    text-align: center;
+    display: flex;              /* pone todo en línea */
+    align-items: center;        /* centra verticalmente */
+    justify-content: center;    /* centra horizontalmente */
+    gap: 20px;                  /* espacio entre elementos */
+}
 .artigo {
     max-width: 1280px;
     width: 90%;
-    margin: 30px auto;
+    margin: 30px 30px;
     padding: 30px;
     text-align: center;
     background-color: rgb(255, 247, 237);
 }
 
-.artigo h1 {
+.RightSide{
+
+    max-width: 1280px;
+    width: 90%;
+    margin: 30px 30px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(255, 247, 237);
+
+}
+
+h1 {
     color: rgb(51, 14, 92);
-    font-size: 50px;
+    font-size: 70px;
     font-family: 'Times New Roman', Times, serif;
     font-variant: small-caps;
     font-weight: normal;
 }
 
-.artigo h2 {
+h2 {
     color: rgb(51, 14, 92);
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
@@ -59,7 +81,7 @@ body {
     font-weight: normal;
 }
 
-.artigo h3 {
+h3 {
     color: rgb(51, 14, 92);
     font-size: 25px;
     font-family: 'Times New Roman', Times, serif;
@@ -67,14 +89,14 @@ body {
     font-weight: normal;
 }
 
-.artigo p {
+p {
     color: rgb(119, 58, 119);
     text-align: left;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     line-height: 30px;
-    margin: 20px 50px;
+    margin: 20px 0;
 }
 
 ul {
@@ -89,4 +111,48 @@ ol {
     text-align:center;
     padding-left: 25px;
     list-style-position: outside;
+}
+
+.footer{
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(199, 92, 255)
+}
+
+.footer #email{
+
+    color: rgb(51, 14, 92);
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-variant: small-caps;
+    font-weight: normal;
+
+}
+
+.footer .NewsLetter{
+
+    color: rgb(51, 14, 92);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.sendBotton{
+    font-size: 20px;   /* agranda el texto */
+    padding: 10px 20px; /* agranda el botón */
+}
+
+.content{
+    display: flex;
+    gap: 20px;
+}
+
+.main{
+    width: 70%;
+}
+
+.RightSide{
+    width: 30%;
 }
