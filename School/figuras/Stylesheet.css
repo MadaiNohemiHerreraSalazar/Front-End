@@ -206,6 +206,6 @@ body {
     width: 150px;
     background: #e74c3c;
     position: absolute;
-    left: -55px; /* (150px largura - 40px meio) / 2 */
-    top: 55px;  /* (150px altura - 40px meio) / 2 */
+    left: -55px; 
+    top: 55px;  
 }
