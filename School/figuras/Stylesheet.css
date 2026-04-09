@@ -1,0 +1,211 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+    background-color: #2c3e50; 
+    font-family: sans-serif;
+}
+
+/* --- FIGURAS --- */
+
+/* Triângulo */
+.triangulo {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 200px solid #e67e22;
+}
+
+/* Rombo (Losango) */
+.rombo {
+    width: 150px;
+    height: 150px;
+    background: #9b59b6;
+    margin: 50px auto;
+    /* O transform faz parte do modelo de renderização da caixa */
+    transform: rotate(45deg); 
+}
+
+/* Trapézio */
+.trapezio {
+    border-bottom: 100px solid #3498db;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 200px;
+    margin: 0 auto;
+}
+
+
+/*  Pentágono (Triângulo sobre um Trapézio) */
+.pentagono {
+    position: relative;
+    width: 100px;/* Largura da base do trapézio */
+    box-sizing: content-box;
+    /*trapézio da base usando bordas */
+    border-width: 90px 35px 0; 
+    border-style: solid;
+    border-color: #2ecc71 transparent; 
+    margin: 60px auto;/* Espaço para o topo não sumir */
+}
+
+.pentagono::before {
+    content: "";
+    position: absolute;
+    height: 0; 
+    width: 0;
+    /* triângulo exatamente no topo do trapézio */
+    top: -155px; 
+    left: -35px;
+    /* Cria o triângulo do topo */
+    border-width: 0 85px 65px; 
+    border-style: solid;
+    border-color: transparent transparent #2ecc71;
+}
+
+/* Hexágono (Retângulo com triângulos em cima e embaixo) */
+.hexagono {
+    width: 100px; 
+    height: 55px;
+    background-color: #f1c40f;
+    position: relative;
+    margin: 30px auto;
+}
+.hexagono::before, .hexagono::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+.hexagono::before {
+    bottom: 100%;
+    border-bottom: 25px solid #f1c40f;
+}
+.hexagono::after {
+    top: 100%;
+    border-top: 25px solid #f1c40f;
+}
+
+/*flecha */
+
+.flecha {
+    position: relative;
+    /* Corpo da Flecha: Um retângulo horizontal */
+    width: 200px;  
+    height: 30px; 
+    background-color: #3498db; 
+    
+    /* Centralização horizontal básica do Box Model */
+    margin: 100px auto; 
+}
+
+/* 2. Ponta da Flecha (O Triângulo) */
+.flecha::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 50%;  
+    transform: translateY(-50%); /* Ajuste fino para alinhar o centro do triângulo */
+    width: 0;
+    height: 0;
+    /* Bordas de cima e baixo transparentes criam o ângulo */
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    /* Borda esquerda colorida forma o corpo do triângulo */
+    border-left: 50px solid #3498db; 
+}
+
+/* Estrela (Dois triângulos invertidos e cruzados) */
+.estrela {
+   margin: 50px auto;
+   position: relative;
+   width: 0; height: 0;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid #f1c40f;
+   border-left: 100px solid transparent;
+   transform: rotate(35deg);
+}
+.estrela::before {
+   content: '';
+   position: absolute;
+   border-bottom: 80px solid #f1c40f;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   top: -45px; left: -65px;
+   transform: rotate(-35deg);
+}
+.estrela::after {
+   content: '';
+   position: absolute;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid #f1c40f;
+   border-left: 100px solid transparent;
+   top: 3px; left: -105px;
+   transform: rotate(-70deg);
+}
+
+/* Coração (Dois círculos montados sobre um quadrado rotacionado) */
+.coracao {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    transform: rotate(-45deg);
+    margin: 50px auto;
+}
+.coracao::before, .coracao::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+}
+.coracao::before { top: -50px; left: 0; }
+.coracao::after { left: 50px; top: 0; }
+
+/*Semi Circurlo */
+
+.semicirculo {
+    width: 200px;
+    height: 100px; /* Metade da largura para ser um semicírculo perfeito */
+    background-color: #9b59b6;
+    margin: 100px auto;
+    
+    /* Arredonda apenas os cantos superiores */
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    
+    border: 1px solid #8e44ad;
+}
+
+/*Cruz */
+.cruz {
+    background: #e74c3c;
+    height: 150px;
+    width: 40px;
+    position: relative;
+    margin: 100px auto;
+}
+
+.cruz::after {
+    content: "";
+    height: 40px;
+    width: 150px;
+    background: #e74c3c;
+    position: absolute;
+    left: -55px; /* (150px largura - 40px meio) / 2 */
+    top: 55px;  /* (150px altura - 40px meio) / 2 */
+}
