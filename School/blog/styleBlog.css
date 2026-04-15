@@ -20,7 +20,6 @@ body {
     width: 100%;
     height: 90px;
     background-color: rgb(51, 14, 92);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,11 +39,20 @@ body {
     padding: 30px;
     background-color: rgb(199, 92, 255);
     text-align: center;
-    display: flex;              /* pone todo en línea */
-    align-items: center;        /* centra verticalmente */
-    justify-content: center;    /* centra horizontalmente */
-    gap: 20px;                  /* espacio entre elementos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
+
+.foto-autor {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .artigo {
     max-width: 1280px;
     width: 90%;
@@ -54,15 +62,14 @@ body {
     background-color: rgb(255, 247, 237);
 }
 
-.RightSide{
-
+.RightSide {
     max-width: 1280px;
-    width: 90%;
+    width: 30%;
     margin: 30px 30px;
     padding: 30px;
     text-align: center;
     background-color: rgb(255, 247, 237);
-
+    order: 2;
 }
 
 h1 {
@@ -101,58 +108,148 @@ p {
 
 ul {
     display: inline-block;
-    text-align:center;
+    text-align: center;
     padding-left: 25px;
     list-style-position: outside;
 }
 
 ol {
     display: inline-block;
-    text-align:center;
+    text-align: center;
     padding-left: 25px;
     list-style-position: outside;
 }
 
-.footer{
+.footer {
     width: 100%;
     padding: 30px;
     text-align: center;
-    background-color: rgb(199, 92, 255)
+    background-color: rgb(199, 92, 255);
 }
 
-.footer #email{
-
+.footer #email {
     color: rgb(51, 14, 92);
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     font-variant: small-caps;
     font-weight: normal;
-
 }
 
-.footer .NewsLetter{
-
+.footer .NewsLetter {
     color: rgb(51, 14, 92);
     font-size: 30px;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
-
 }
 
-.sendBotton{
-    font-size: 20px;   /* agranda el texto */
-    padding: 10px 20px; /* agranda el botón */
+.sendBotton {
+    font-size: 20px;
+    padding: 10px 20px;
 }
 
-.content{
+.content {
     display: flex;
     gap: 20px;
 }
 
-.main{
+.main {
     width: 70%;
+    order: 1;
 }
 
-.RightSide{
-    width: 30%;
+/* ── Tablet (hasta 900px) ── */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+        order: 2;
+    }
+
+    .RightSide {
+        width: 100%;
+        margin: 16px auto 30px;
+        order: 1;
+    }
+
+    .artigo {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+/* ── Móvil (hasta 600px) ── */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 20px 16px;
+        gap: 12px;
+    }
+
+    .artigo {
+        width: 95%;
+        margin: 16px auto;
+        padding: 20px 16px;
+    }
+
+    .RightSide {
+        width: 95%;
+        margin: 16px auto 20px;
+        padding: 20px 16px;
+        order: 1;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main {
+        width: 100%;
+        order: 2;
+    }
+
+    #barra {
+        height: 70px;
+    }
+
+    #barra a {
+        font-size: 20px;
+    }
+
+    .footer {
+        padding: 20px 16px;
+    }
+
+    .footer #email,
+    .footer .NewsLetter {
+        font-size: 22px;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
 }
