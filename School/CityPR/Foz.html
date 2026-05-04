@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Foz Travel | Full Experience</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg custom-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MARINA FOZ</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#inicio">INÍCIO</a>
+                <a class="nav-link" href="#destinos">DESTINOS</a>
+                <a class="nav-link" href="#planejamento">PLANEJAMENTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1552076089-a3698774775d?q=80&w=1600');">
+                    <div class="hero-card">
+                        <h1>Cataratas do Iguaçu</h1>
+                        <p>A força da natureza em sua forma mais pura e mística.</p>
+                        <button class="btn btn-vintage">Explorar Agora</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1626084045532-680482980d21?q=80&w=1600');">
+                    <div class="hero-card">
+                        <h1>Parque das Aves</h1>
+                        <p>Um santuário de cores e vida em meio à Mata Atlântica.</p>
+                        <button class="btn btn-vintage">Agendar Visita</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1580541631940-209074092285?q=80&w=1600');">
+                    <div class="hero-card">
+                        <h1>Marco das 3 Fronteiras</h1>
+                        <p>O encontro mágico de três nações sob o pôr do sol mais belo.</p>
+                        <button class="btn btn-vintage">Ver o Pôr do Sol</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container py-5" id="destinos">
+        <h2 class="text-center mb-5 section-title">Pontos de Encantamento</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="card h-100 soft-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Itaipu Binacional</h5>
+                        <p class="card-text">A força da engenharia em harmonia com a natureza regional.</p>
+                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4">
+                <article class="card h-100 soft-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mesquita de Foz</h5>
+                        <p class="card-text">A arquitetura e cultura árabe no coração do Paraná.</p>
+                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-4">
+                <article class="card h-100 soft-card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Templo Budista</h5>
+                        <p class="card-text">Paz e contemplação em um dos maiores centros da América Latina.</p>
+                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5" id="planejamento">
+        <div class="planning-area p-5">
+            <h2 class="text-center mb-4 section-title">Dicas para sua Viagem</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">✨ Escolha o seu roteiro (Brasil ou Argentina).</li>
+                <li class="list-group-item">✨ Reserve um hotel com transfer incluso.</li>
+                <li class="list-group-item">✨ Agende os tours de aventura antecipadamente.</li>
+                <li class="list-group-item">✨ Prepare sua capa de chuva encantada.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 border-top">
+        <p>MARINA FOZ TRAVEL &copy; 2026 | DESIGN GHIBLI INSPIRED</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
