@@ -29,8 +29,9 @@
         </div>
         
         <div class="carousel-inner">
+
             <div class="carousel-item active">
-                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1552076089-a3698774775d?q=80&w=1600');">
+                <div class="hero-block" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/ed/a5/17/foz-do-iguacu.jpg?w=900&h=500&s=1');">
                     <div class="hero-card">
                         <h1>Cataratas do Iguaçu</h1>
                         <p>A força da natureza em sua forma mais pura e mística.</p>
@@ -38,8 +39,10 @@
                     </div>
                 </div>
             </div>
+
+          
             <div class="carousel-item">
-                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1626084045532-680482980d21?q=80&w=1600');">
+                <div class="hero-block" style="background-image: url('https://rafaelguimaraes.me/wp-content/uploads/2024/02/Parque-das-Aves-Rafael-Guimaraes-5-1024x683.jpg');">
                     <div class="hero-card">
                         <h1>Parque das Aves</h1>
                         <p>Um santuário de cores e vida em meio à Mata Atlântica.</p>
@@ -47,8 +50,10 @@
                     </div>
                 </div>
             </div>
+
+    
             <div class="carousel-item">
-                <div class="hero-block" style="background-image: url('https://images.unsplash.com/photo-1580541631940-209074092285?q=80&w=1600');">
+                <div class="hero-block" style="background-image: url('https://media.gazetadopovo.com.br/2023/02/14124529/shutterstock_2153435695-1-960x540.jpg');">
                     <div class="hero-card">
                         <h1>Marco das 3 Fronteiras</h1>
                         <p>O encontro mágico de três nações sob o pôr do sol mais belo.</p>
@@ -56,6 +61,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
@@ -69,33 +75,40 @@
     <div class="container py-5" id="destinos">
         <h2 class="text-center mb-5 section-title">Pontos de Encantamento</h2>
         <div class="row g-4">
+
             <div class="col-md-4">
-                <article class="card h-100 soft-card">
-                    <div class="card-body text-center">
+    
+                <article class="card h-100 soft-card img-card" id="card-itaipu">
+                    <div class="card-img-overlay-custom">
                         <h5 class="card-title">Itaipu Binacional</h5>
                         <p class="card-text">A força da engenharia em harmonia com a natureza regional.</p>
-                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                        <button class="btn btn-outline-light rounded-pill">Ver mais</button>
                     </div>
                 </article>
             </div>
+
             <div class="col-md-4">
-                <article class="card h-100 soft-card">
-                    <div class="card-body text-center">
+            
+                <article class="card h-100 soft-card img-card" id="card-mesquita">
+                    <div class="card-img-overlay-custom">
                         <h5 class="card-title">Mesquita de Foz</h5>
                         <p class="card-text">A arquitetura e cultura árabe no coração do Paraná.</p>
-                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                        <button class="btn btn-outline-light rounded-pill">Ver mais</button>
                     </div>
                 </article>
             </div>
+
             <div class="col-md-4">
-                <article class="card h-100 soft-card">
-                    <div class="card-body text-center">
+         
+                <article class="card h-100 soft-card img-card" id="card-templo">
+                    <div class="card-img-overlay-custom">
                         <h5 class="card-title">Templo Budista</h5>
                         <p class="card-text">Paz e contemplação em um dos maiores centros da América Latina.</p>
-                        <button class="btn btn-outline-secondary rounded-pill">Ver mais</button>
+                        <button class="btn btn-outline-light rounded-pill">Ver mais</button>
                     </div>
                 </article>
             </div>
+
         </div>
     </div>
 
@@ -116,5 +129,49 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+    const cardImages = {
+
+        // Card Itaipu — lista de fotos tentadas em ordem
+        'card-itaipu': [
+            'https://www.brasil247.com/_next/image?url=https%3A%2F%2Fcdn.brasil247.com%2Fpb-b247gcp%2Fswp%2Fjtjeq9%2Fmedia%2F20260102160132_dab9041b8fcf2560f7e64585f95461d5da3d8ebfb77eaa495c9cc55ea4e323e1.webp&w=3840&q=75',
+            'https://upload.wikimedia.org/wikipedia/commons/d/d2/Itaipu_geral.jpg',
+            'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/03/Itaipu-foto-Caio-Coronel.jpg?w=1200&h=675&crop=1'  
+        ],
+
+        // Card Mesquita — lista de fotos tentadas em ordem
+        'card-mesquita': [
+            'https://www.loumarturismo.com.br/_next/image?url=https%3A%2F%2Fassets.loumarturismo.com.br%2Fpasseios%2Fimagens%2F00111%2F3946-mesquitaemfozdoiguacu.jpg&w=3840&q=75',
+            'https://www.iguassu.com.br/wp-content/uploads/2023/04/Mesquita-Omar-Ibn-al-Khattab-ph-Divulgacao-16-1024x575.jpg',
+            'https://www.hoteldelreyfoz.com.br/wp-content/uploads/2021/02/Reproducao-Combo-Iguassu.png'  
+        ],
+
+        // Card Templo Budista — lista de fotos tentadas em ordem
+        'card-templo': [
+            'https://upload.wikimedia.org/wikipedia/commons/e/e6/Templobudista_395.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR697333VTNdnB2QI41_sAjsDgRJQ5ZWLMf_Q&s',
+            'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/e3/c1/91/caption.jpg?w=900&h=500&s=1'  
+        ]
+    };
+
+    function tryLoadImage(cardId, urls, index = 0) {
+        if (index >= urls.length) return;
+        const img = new Image();
+        img.onload = () => {
+            document.getElementById(cardId).style.backgroundImage = `url('${urls[index]}')`;
+        };
+        img.onerror = () => tryLoadImage(cardId, urls, index + 1);
+        img.src = urls[index];
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        for (const [cardId, urls] of Object.entries(cardImages)) {
+            tryLoadImage(cardId, urls);
+        }
+    });
+    </script>
+
 </body>
 </html>
