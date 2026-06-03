@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="calc">
+
+      <div class="display">
+        <div class="expr" id="expr"></div>
+        <div class="val" id="val">0</div>
+      </div>
+
+      <div class="buttons">
+
+        <div class="row">
+          <button class="btn sp" onclick="clr()">AC</button>
+          <button class="btn sp" onclick="del()">DEL</button>
+          <button class="btn sp" onclick="calcLog()">LOG</button>
+          <button class="btn op" onclick="setOp('/')">÷</button>
+        </div>
+
+        <div class="row">
+          <button class="btn num" onclick="d('7')">7</button>
+          <button class="btn num" onclick="d('8')">8</button>
+          <button class="btn num" onclick="d('9')">9</button>
+          <button class="btn op" onclick="setOp('*')">×</button>
+        </div>
+
+        <div class="row">
+          <button class="btn num" onclick="d('4')">4</button>
+          <button class="btn num" onclick="d('5')">5</button>
+          <button class="btn num" onclick="d('6')">6</button>
+          <button class="btn op" onclick="setOp('-')">−</button>
+        </div>
+
+        <div class="row">
+          <button class="btn num" onclick="d('1')">1</button>
+          <button class="btn num" onclick="d('2')">2</button>
+          <button class="btn num" onclick="d('3')">3</button>
+          <button class="btn op" onclick="setOp('+')">+</button>
+        </div>
+
+        <div class="row">
+          <button class="btn sp" onclick="calcPow()">xʸ</button>
+          <button class="btn num" onclick="d('0')">0</button>
+          <button class="btn num" onclick="dot()">.</button>
+          <button class="btn eq" onclick="calc()">=</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
