@@ -1,8 +1,13 @@
 let cur = '0';
-let op = null;
+let op = null;       // operação aritmética básica (+, -, *, /)
 let prev = null;
 let justCalc = false;
 let exprStr = '';
+
+// Operações de dois passos sem prompt (log base, nCr, xʸ)
+// sciOp: qual operação está aguardando o segundo valor
+let sciOp = null;    // 'log' | 'ncr' | 'pow'
+let sciPrev = null;  // primeiro valor guardado
 
 const valEl = document.getElementById('val');
 const exprEl = document.getElementById('expr');
@@ -32,6 +37,7 @@ function dot() {
 function clr() {
     cur = '0'; op = null; prev = null;
     exprStr = ''; justCalc = false;
+    sciOp = null; sciPrev = null;
     updateDisplay('0');
     exprEl.textContent = '';
 }
@@ -45,6 +51,7 @@ function del() {
 const sym = { '+': '+', '-': '−', '*': '×', '/': '÷' };
 
 function setOp(o) {
+    sciOp = null; sciPrev = null;
     if (op && !justCalc) calc(false);
     prev = parseFloat(cur);
     op = o;
@@ -66,6 +73,9 @@ function fmt(n) {
 }
 
 function calc(show = true) {
+    // Se há uma sciOp pendente, o "=" resolve ela
+    if (sciOp) { resolveSci(); return; }
+
     if (!op || prev === null) return;
     const b = parseFloat(cur);
     const expr = exprStr + b;
@@ -78,32 +88,93 @@ function calc(show = true) {
     op = null; prev = null; justCalc = true;
 }
 
-function calcLog() {
-    const n = parseFloat(cur);
-    if (isNaN(n) || n <= 0) { updateDisplay('Erro'); return; }
-    const baseStr = prompt('Base do logaritmo (padrão = 10):');
-    const base = baseStr ? parseFloat(baseStr) : 10;
-    if (isNaN(base) || base <= 0 || base === 1) { updateDisplay('Erro'); return; }
-    const r = Math.log(n) / Math.log(base);
-    exprEl.textContent = 'log' + base + '(' + n + ') =';
+// ── Operações de um passo ────────────────────────────────
+
+function calcFact() {
+    const n = Math.round(parseFloat(cur));
+    if (isNaN(n) || n < 0 || n > 170) { updateDisplay('Erro'); return; }
+    let r = 1;
+    for (let i = 2; i <= n; i++) r *= i;
+    exprEl.textContent = n + '! =';
     cur = fmt(r);
     updateDisplay(cur);
     justCalc = true;
+}
+
+function calcSqrt() {
+    const n = parseFloat(cur);
+    if (isNaN(n) || n < 0) { updateDisplay('Erro'); return; }
+    exprEl.textContent = '√(' + n + ') =';
+    cur = fmt(Math.sqrt(n));
+    updateDisplay(cur);
+    justCalc = true;
+}
+
+function calcLn() {
+    const n = parseFloat(cur);
+    if (isNaN(n) || n <= 0) { updateDisplay('Erro'); return; }
+    exprEl.textContent = 'ln(' + n + ') =';
+    cur = fmt(Math.log(n));
+    updateDisplay(cur);
+    justCalc = true;
+}
+
+// ── Operações de dois passos (sem prompt) ───────────────
+// Fluxo: digita 1º valor → pressiona botão → digita 2º valor → pressiona =
+
+function startSciOp(name, label) {
+    sciPrev = parseFloat(cur);
+    if (isNaN(sciPrev)) return;
+    sciOp = name;
+    exprEl.textContent = label;
+    cur = '0';
+    updateDisplay('0');
+    justCalc = false;
+}
+
+function resolveSci() {
+    const b = parseFloat(cur);
+    let r, exprLabel;
+
+    if (sciOp === 'log') {
+        // sciPrev = número, b = base (padrão 10 se 0 foi digitado)
+        const base = (b === 0 || isNaN(b)) ? 10 : b;
+        if (sciPrev <= 0 || base <= 0 || base === 1) { updateDisplay('Erro'); sciOp = null; return; }
+        r = Math.log(sciPrev) / Math.log(base);
+        exprLabel = 'log' + base + '(' + sciPrev + ') =';
+    } else if (sciOp === 'ncr') {
+        const n = Math.round(sciPrev);
+        const rr = Math.round(b);
+        if (rr < 0 || rr > n) { updateDisplay('Erro'); sciOp = null; return; }
+        function fact(x) { let f = 1; for (let i = 2; i <= x; i++) f *= i; return f; }
+        r = fact(n) / (fact(rr) * fact(n - rr));
+        exprLabel = 'C(' + n + ',' + rr + ') =';
+    } else if (sciOp === 'pow') {
+        r = Math.pow(sciPrev, b);
+        exprLabel = sciPrev + '^' + b + ' =';
+    }
+
+    const res = fmt(r);
+    exprEl.textContent = exprLabel;
+    cur = res === 'Erro' ? '0' : String(Math.round(r * 1e10) / 1e10);
+    updateDisplay(res);
+    sciOp = null; sciPrev = null; justCalc = true;
+}
+
+// Botões que iniciam operações de dois passos
+function calcLog() {
+    startSciOp('log', 'log base ( ' + parseFloat(cur) + ' ) base→');
+}
+
+function calcComb() {
+    startSciOp('ncr', 'C( ' + Math.round(parseFloat(cur)) + ' , r )  r→');
 }
 
 function calcPow() {
-    const base = parseFloat(cur);
-    if (isNaN(base)) return;
-    const expStr2 = prompt('Expoente para ' + base + '^y:');
-    const exp = parseFloat(expStr2);
-    if (isNaN(exp)) return;
-    const r = Math.pow(base, exp);
-    exprEl.textContent = base + '^' + exp + ' =';
-    cur = fmt(r);
-    updateDisplay(cur);
-    justCalc = true;
+    startSciOp('pow', parseFloat(cur) + ' ^ exp→');
 }
 
+// ── Teclado ─────────────────────────────────────────────
 document.addEventListener('keydown', e => {
     if (e.key >= '0' && e.key <= '9') d(e.key);
     else if (e.key === '.') dot();
