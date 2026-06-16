@@ -1,0 +1,159 @@
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+body {
+    background-color: #ffe5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(255, 112, 166, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Título Fofo */
+h1 {
+    color: #ff477e;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px #ffccd5;
+}
+
+/* Grupo de Input e Botão */
+.input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.3rem;
+    border: 3px solid #ffb3c6;
+    border-radius: 50px;
+    outline: none;
+    color: #ff477e;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff477e;
+    box-shadow: 0 0 10px rgba(255, 71, 126, 0.2);
+}
+
+input[type="text"]::placeholder {
+    color: #ffccd5;
+}
+
+/* Botão Adicionar */
+#addBtn {
+    background-color: #ff7096;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#addBtn:hover {
+    background-color: #ff477e;
+    transform: scale(1.05);
+}
+
+/* Contador de Tarefas */
+.counter {
+    color: #ff7096;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#pendingCount {
+    font-weight: 700;
+    color: #ff477e;
+}
+
+/* Lista de Tarefas */
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: #fff0f3;
+    color: #ff477e;
+    padding: 12px 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    border-left: 6px solid #ff7096;
+    transition: all 0.3s ease;
+    
+    /* Flexbox para alinhar o texto e o botão de excluir */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Span que envolve o texto da tarefa para podermos clicar nele isolado */
+.task-text {
+    flex: 1;
+    cursor: pointer;
+    user-select: none;
+    padding-right: 15px;
+}
+
+/* Classe de Tarefa Concluída (Riscada) */
+.completed .task-text {
+    text-decoration: line-through;
+    color: #ffccd5;
+}
+
+.completed {
+    background-color: #f8f9fa;
+    border-left-color: #ffccd5;
+}
+
+/* Botão Excluir (X) */
+.delete-btn {
+    background-color: #ffccd5;
+    color: #ff477e;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff477e;
+    color: white;
+    transform: scale(1.1);
+}
