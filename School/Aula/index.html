@@ -1,0 +1,47 @@
+<script>
+
+    let nome = "maddy"
+    let cidade = "Cascavel - PR"
+    let curso = "informatica"
+
+    console.log(nome.length)
+    console.log(nome.toUpperCase)
+    console.log(nome.toLocaleLowerCase)
+
+    let email =  "maddy@gmail.com"
+
+    console.log(email.includes("@"))
+    console.log(email.startsWith("maddy"))
+    console.log(email.endsWith(".com"))
+
+    // Texto inicial com espaços extras e uma palavra errada
+let entrada = "   Aprender Python é incrível!   ";
+
+// 1. trim(): Remove espaços das pontas
+let limpo = entrada.trim();
+
+// 2. replace(): Troca "Python" por "JavaScript"
+let corrigido = limpo.replace("Python", "JavaScript");
+
+// 3. slice(): Pega os primeiros 18 caracteres -> "Aprender JavaScript"
+let trecho = corrigido.slice(0, 18);
+
+// 4. substring(): Extrai apenas a palavra "JavaScript"
+let linguagem = trecho.substring(8, 18);
+
+// 5. split(): Transforma a frase corrigida em uma lista de palavras
+let palavras = corrigido.split(" ");
+
+// 6. join(): Reúne a lista de palavras em uma nova frase separada por hífens
+let resultadoFinal = palavras.join("-");
+
+// Testando as saídas no console:
+console.log("1. trim():", limpo);           // "Aprender Python é incrível!"
+console.log("2. replace():", corrigido);    // "Aprender JavaScript é incrível!"
+console.log("3. slice():", trecho);         // "Aprender JavaScript"
+console.log("4. substring():", linguagem);  // "JavaScript"
+console.log("5. split():", palavras);       // ["Aprender", "JavaScript", "é", "incrível!"]
+console.log("6. join():", resultadoFinal);  // "Aprender-JavaScript-é-incrível!"
+
+</script>
+
