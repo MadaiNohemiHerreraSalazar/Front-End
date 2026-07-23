@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>minha-idade.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- decorative corner trees -->
+  <div class="tree tree--tl">🌲</div>
+  <div class="tree tree--tr">🌳</div>
+  <div class="tree tree--bl">🌳</div>
+  <div class="tree tree--br">🌲</div>
+  <div class="cloud cloud--a">☁️</div>
+  <div class="cloud cloud--b">☁️</div>
+
+  <main class="browser-window">
+
+    <!-- title bar -->
+    <div class="title-bar">
+      <div class="title-bar__left">
+        <span class="bug">🐛</span>
+        <span class="title-text">https://minha-idade.com</span>
+      </div>
+      <div class="title-bar__right">
+        <button class="win-btn" aria-label="minimizar">–</button>
+        <button class="win-btn" aria-label="maximizar">▢</button>
+        <button class="win-btn win-btn--close" aria-label="fechar">×</button>
+      </div>
+    </div>
+
+    <!-- address bar -->
+    <div class="nav-bar">
+      <button class="nav-arrow">‹</button>
+      <button class="nav-arrow">›</button>
+      <button class="nav-refresh">⟳</button>
+      <div class="address-bar">
+        <span>🔎</span>
+        <span>minha-idade.com/painel-fofo</span>
+      </div>
+    </div>
+
+    <!-- tabs -->
+    <div class="tabs-bar">
+      <button class="tab active" data-tab="idade">🎂 idade <span class="tab-x">×</span></button>
+      <button class="tab" data-tab="formatura">🎓 formatura <span class="tab-x">×</span></button>
+      <button class="tab" data-tab="aniversario">🎁 aniversário <span class="tab-x">×</span></button>
+      <button class="tab" data-tab="especiais">💌 especiais <span class="tab-x">×</span></button>
+      <span class="by-credit">feito com 🍓</span>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+
+      <!-- PAINEL 1: IDADE -->
+      <section id="idade" class="panel active">
+        <div class="section-label"><span class="pill">Calculadora de Idade</span><span class="dots-line"></span></div>
+
+        <div class="card intro-card">
+          <div class="intro-card__icon">🍓</div>
+          <div class="intro-card__body">
+            <label for="birth-date">Sua data de nascimento</label>
+            <div class="input-row">
+              <input type="date" id="birth-date">
+              <button id="calc-age-btn" class="pill-btn">calcular 🌱</button>
+            </div>
+            <p class="hint" id="age-hint">escolha o dia, mês e ano para ver sua idade completinha ✨</p>
+          </div>
+        </div>
+
+        <div class="stats-grid" id="age-stats"></div>
+      </section>
+
+      <!-- PAINEL 2: FORMATURA -->
+      <section id="formatura" class="panel">
+        <div class="section-label"><span class="pill">Contagem para o Fim das Aulas</span><span class="dots-line"></span></div>
+        <div class="card countdown-card">
+          <div class="countdown-card__icon">🎒</div>
+          <div class="countdown-card__text">
+            <p class="hint">último dia de aula</p>
+            <p class="big-date">20 de dezembro de 2026</p>
+          </div>
+        </div>
+        <div class="stats-grid" id="school-countdown"></div>
+      </section>
+
+      <!-- PAINEL 3: ANIVERSARIO -->
+      <section id="aniversario" class="panel">
+        <div class="section-label"><span class="pill">Próximo Aniversário</span><span class="dots-line"></span></div>
+        <div class="card" id="bday-card">
+          <div class="intro-card__icon">🎁</div>
+          <div class="intro-card__body">
+            <p class="hint">baseado na data de nascimento que você colocou na aba "idade" 🎂</p>
+            <div id="bday-result" class="bday-result">
+              <p class="muted">preencha sua data de nascimento na aba idade primeiro!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAINEL 4: DATAS ESPECIAIS -->
+      <section id="especiais" class="panel">
+        <div class="section-label"><span class="pill">Datas Especiais</span><span class="dots-line"></span></div>
+
+        <div class="card special-form-card">
+          <div class="intro-card__icon">💌</div>
+          <div class="intro-card__body">
+            <label for="special-name">Adicionar nova data</label>
+            <div class="special-form">
+              <input type="text" id="special-name" placeholder="nome (ex: aniversário da vovó)">
+              <select id="special-icon" aria-label="ícone">
+                <option value="🎂">🎂 bolo</option>
+                <option value="🌷">🌷 flor</option>
+                <option value="🎈">🎈 balão</option>
+                <option value="💝">💝 presente</option>
+                <option value="🐾">🐾 pet</option>
+                <option value="✈️">✈️ viagem</option>
+                <option value="🎓">🎓 formatura</option>
+                <option value="💍">💍 aliança</option>
+              </select>
+              <select id="special-day" aria-label="dia"></select>
+              <select id="special-month" aria-label="mês"></select>
+              <button id="add-special-btn" class="pill-btn">guardar 💾</button>
+            </div>
+            <p class="hint">a data se repete todo ano — fica salva neste navegador</p>
+          </div>
+        </div>
+
+        <div class="special-list" id="special-list"></div>
+      </section>
+
+    </div>
+
+    <!-- footer -->
+    <div class="footer-bar">
+      <span class="footer-dot">●</span><span class="footer-dot">●</span><span class="footer-dot">●</span>
+      <span class="footer-text">todos os direitos reservados à fofura 🌼</span>
+      <span class="footer-dot">●</span><span class="footer-dot">●</span><span class="footer-dot">●</span>
+    </div>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
