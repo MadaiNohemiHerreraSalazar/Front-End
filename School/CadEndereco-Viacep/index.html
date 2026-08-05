@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CadEndereco - Consulta ViaCEP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>CONSULTAR ENDEREÇO</h2>
+    <form id="cep-form">
+
+      <div class="input-group">
+        <input type="text" id="cep" maxlength="9" placeholder="CEP (Apenas números)" required>
+        <span class="error-msg" id="cep-error">CEP inválido. Deve conter 8 dígitos.</span>
+      </div>
+
+      <div class="input-group readonly">
+        <input type="text" id="logradouro" placeholder="Rua / Logradouro" readonly>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="numero" placeholder="Número" required>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="complemento" placeholder="Complemento (Opcional)">
+      </div>
+
+      <div class="input-group readonly">
+        <input type="text" id="bairro" placeholder="Bairro" readonly>
+      </div>
+
+      <div class="input-group readonly">
+        <input type="text" id="localidade" placeholder="Cidade" readonly>
+      </div>
+
+      <div class="input-group readonly">
+        <input type="text" id="uf" placeholder="Estado (UF)" readonly>
+      </div>
+
+      <button type="submit" class="btn-submit">CADASTRAR</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<script>
+    async function buscarCep(cep) {
+        const url = `https://viacep.com.br/ws/${cep}/json/`;
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
+        return dados;
+    }
+
+
+    buscarCep(85816310).then(resultado => console.log(resultado));
+
+</script>

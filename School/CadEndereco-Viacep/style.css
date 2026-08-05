@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, #2b033d 0%, #170024 100%);
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #4a156b;
+  background-color: #3b0a54;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #b58bc7;
+}
+
+.input-group input:focus {
+  border-color: #9d3cbd;
+}
+
+.input-group.readonly input {
+  background-color: #260538;
+  color: #b58bc7;
+  cursor: not-allowed;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #9d3cbd;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #b246d6;
+}
