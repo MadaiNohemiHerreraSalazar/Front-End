@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Envio — NeoWave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="folha">
+
+    <header class="topo">
+      <span class="eyebrow">Melhor Envio · Sandbox</span>
+      <h1>Finalizar envio</h1>
+      <p class="topo-sub">Informe o CEP de destino — a gente calcula endereço, frete e imposto pra você.</p>
+    </header>
+
+    <main class="painel">
+
+      <!-- ===================== COLUNA ESQUERDA ===================== -->
+      <div class="coluna-fluxo">
+
+        <!-- ETAPA 1 — PACOTE -->
+        <section class="etapa" id="etapa-pacote">
+          <div class="etapa-cabecalho">
+            <span class="etapa-marca">Pacote</span>
+            <h2>O que está sendo enviado</h2>
+          </div>
+
+          <div class="pacote-card">
+            <div class="pacote-selo" aria-hidden="true">NW</div>
+            <div class="pacote-info">
+              <strong id="produto-nome">Fone de Ouvido NeoWave X200</strong>
+              <span class="pacote-medidas" id="produto-medidas">0,4 kg · 8 × 18 × 20 cm</span>
+            </div>
+            <span class="pacote-preco" id="produto-preco">R$ 249,90</span>
+          </div>
+        </section>
+
+        <!-- ETAPA 2 — DESTINO -->
+        <section class="etapa" id="etapa-destino">
+          <div class="etapa-cabecalho">
+            <span class="etapa-marca">Destino</span>
+            <h2>Para onde vai o pacote</h2>
+          </div>
+
+          <label for="cep" class="campo-label">CEP de destino</label>
+          <div class="campo-cep">
+            <input type="text" id="cep" inputmode="numeric" placeholder="00000-000" maxlength="9" autocomplete="postal-code">
+            <div class="cep-status" id="cep-status" aria-live="polite"></div>
+          </div>
+          <p class="campo-erro" id="cep-erro"></p>
+
+          <div class="endereco-card" id="endereco-card" hidden>
+            <div class="endereco-linha">
+              <span id="end-logradouro"></span><span id="end-bairro"></span>
+            </div>
+            <div class="endereco-linha endereco-cidade">
+              <span id="end-cidade"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ETAPA 3 — TRANSPORTADORA -->
+        <section class="etapa" id="etapa-frete" hidden>
+          <div class="etapa-cabecalho">
+            <span class="etapa-marca">Frete</span>
+            <h2>Escolha a transportadora</h2>
+          </div>
+
+          <div class="frete-lista" id="frete-lista">
+            <div class="frete-carregando" id="frete-carregando">Consultando transportadoras…</div>
+          </div>
+          <p class="campo-erro" id="frete-erro"></p>
+        </section>
+
+        <button type="button" id="btn-finalizar" class="btn-finalizar" disabled>
+          Finalizar envio
+        </button>
+      </div>
+
+      <!-- ===================== COLUNA DIREITA — RECIBO ===================== -->
+      <aside class="coluna-recibo">
+        <div class="recibo" id="recibo">
+
+          <div class="recibo-topo">
+            <span class="recibo-marca">NEOWAVE</span>
+            <span class="recibo-tag">comprovante de envio</span>
+          </div>
+
+          <div class="recibo-linhas">
+            <div class="recibo-linha">
+              <span>Subtotal do produto</span>
+              <span id="rec-subtotal">R$ 249,90</span>
+            </div>
+            <div class="recibo-linha">
+              <span>Frete</span>
+              <span id="rec-frete">—</span>
+            </div>
+            <div class="recibo-linha">
+              <span>Imposto estimado <small>(7%)</small></span>
+              <span id="rec-imposto">—</span>
+            </div>
+          </div>
+
+          <div class="recibo-picote" aria-hidden="true"></div>
+
+          <div class="recibo-total">
+            <span>Total</span>
+            <span id="rec-total">—</span>
+          </div>
+
+          <div class="recibo-codigo" id="recibo-codigo">
+            <div class="barras" aria-hidden="true"></div>
+            <span id="codigo-texto">AGUARDANDO CÁLCULO</span>
+          </div>
+
+          <div class="selo-confirmado" id="selo-confirmado" hidden>
+            <span>ENVIO<br>CONFIRMADO</span>
+          </div>
+        </div>
+
+        <p class="recibo-nota" id="recibo-nota">Prazo estimado e código de rastreio aparecem aqui após escolher a transportadora.</p>
+      </aside>
+
+    </main>
+
+    <footer class="rodape">
+      <p>Trabalho acadêmico — consulta ViaCEP + cálculo de frete Melhor Envio (ambiente sandbox). Valores de imposto simulados.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
